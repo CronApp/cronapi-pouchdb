@@ -1,0 +1,9 @@
+{
+    "includes": [
+    {
+      "file": "index.html",
+      "script": "plugins/cronapi-pouchdb/dist/pouchdb.cronapi.min.js",
+      "type": "script"
+    }
+	]
+}

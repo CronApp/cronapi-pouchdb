@@ -1,0 +1,24 @@
+{
+  "name": "cronapi-pouchdb",
+  "version": "1.0.0",
+  "homepage": "https://github.com/CronApp/cronapi-pouchdb",
+  "authors": [
+    "Lincoln Minto <lincolnminto@gmail.com>"
+  ],
+  "description": "A PouchDb plugin for CronApp",
+  "main": "pouchdb.cronapi.js",
+  "keywords": [
+    "pouchdb",
+    "cronapp",
+    "gluonsoft",
+    "cronapi"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
