@@ -6,7 +6,7 @@ const minify = require('gulp-minify');
 
 
 var paths = {
-    js: ['./src/**/*.js'],
+    js: ['./src/**/*.js', '!./src/**/*test.js'],
     i18n: ['./src/i18n/**/*.json']
 };
 

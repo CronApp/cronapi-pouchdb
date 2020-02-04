@@ -4,6 +4,7 @@
   /**
   * @categoryName PouchBD
   */
+  this.cronapi = this.cronapi || {};
   this.cronapi.pouchdb = {};
 
   //Ref: https://pouchdb.com/
@@ -13,8 +14,8 @@
    * @description {{createLocalDatabaseDescription}}
    * @returns {ObjectType.OBJECT}
    */
-  this.cronapi.pouchdb.createLocalDatabase = function (/** @type {ObjectType.STRING} @description {{databaseName}} */	dbName,  /** @type {ObjectType.STRING} @description {{adapterType}} @blockType util_dropdown @keys idb|websql|cordova-sqlite|memory|localstorage @values idb|websql|cordova-sqlite|memory|localstorage  */ adapterType) {
-    let db = new PouchDB(dbName | 'myDB.db', { adapter: adapterType | 'idb' });
+  module.exports.createLocalDatabase = this.cronapi.pouchdb.createLocalDatabase = function (/** @type {ObjectType.STRING} @description {{databaseName}} */	dbName,  /** @type {ObjectType.STRING} @description {{adapterType}} @blockType util_dropdown @keys idb|websql|cordova-sqlite|memory|localstorage @values idb|websql|cordova-sqlite|memory|localstorage  */ adapterType) {
+    let db = new PouchDB(dbName || 'myDB.db', { adapter: adapterType });
     return db;
   };
 
@@ -32,7 +33,7 @@
       }
     };
 
-    let db = new PouchDB(dbName | 'myDB.db', options);
+    let db = new PouchDB(dbName || 'myDB.db', options);
     return db;
   };
 
