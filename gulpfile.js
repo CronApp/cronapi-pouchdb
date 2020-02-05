@@ -18,6 +18,7 @@ gulp.task('js', function () {
             ext: {
                 min: '.min.js'
             },
+            preserveComments: 'all',
             noSource: true
         }))
         .pipe(gulp.dest('./dist/'))
