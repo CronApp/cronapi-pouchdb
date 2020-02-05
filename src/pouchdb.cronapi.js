@@ -2,7 +2,7 @@
   'use strict';
 
   /**
-  * @categoryName PouchBD
+  * @categoryName {{localDatabase}}
   */
   this.cronapi = this.cronapi || {};
   this.cronapi.pouchdb = {};
