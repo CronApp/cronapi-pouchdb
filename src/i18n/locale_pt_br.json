@@ -1,4 +1,5 @@
 {
+    "localDatabase": "Banco de dados local",
     "createLocalDatabase": "Criar banco de dados local",
     "createLocalDatabaseDescription": "Cria um banco de dados local",
     "databaseName": "Nome do banco de dados",

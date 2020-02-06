@@ -4,10 +4,11 @@
   /**
   * @categoryName {{localDatabase}}
   */
-  this.cronapi = this.cronapi || {};
+
   this.cronapi.pouchdb = {};
 
   //Ref: https://pouchdb.com/
+  
   /**
    * @type function
    * @name {{createLocalDatabase}}
