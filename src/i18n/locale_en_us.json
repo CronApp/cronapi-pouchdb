@@ -55,5 +55,6 @@
     "emitDescription": "Emit to the query event the found document based on criteria",
     "createDocLote": "Create documents",
     "createDocLoteDescription" : "Create document list",
-    "docs": "Documents"
+    "docs": "Documents",
+    "revId": "Id Revision"
 }

@@ -55,5 +55,6 @@
     "emitDescription": "Emite um evento à consulta informando que o documento foi encontrado",
     "createDocLote": "Criar documentos",
     "createDocLoteDescription" : "Cria uma lista de documentos",
-    "docs": "Documentos"
+    "docs": "Documentos",
+    "revId": "Id da Revisão"
 }
