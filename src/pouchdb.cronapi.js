@@ -58,7 +58,7 @@
   * @name {{compactDatabase}}
   * @description {{compactDatabaseDescription}}
   */
-  this.cronapi.pouchdb.compactDatabase = function (/** @type {ObjectType.OBJECT} @description {{databaseRef}} */	db, /** @type {ObjectType.OBJECT} @description {{options}} */	options,  /**@type {ObjectType.STATEMENTSENDER} @description {{error}} */ statementError,  /**@type {ObjectType.STATEMENTSENDER} @description {{success}} */ statementSuccess) {
+  this.cronapi.pouchdb.compactDatabase = function (/** @type {ObjectType.OBJECT} @description {{databaseRef}} */	db, /** @type {ObjectType.OBJECT} @description {{options}} */	options = {},  /**@type {ObjectType.STATEMENTSENDER} @description {{error}} */ statementError,  /**@type {ObjectType.STATEMENTSENDER} @description {{success}} */ statementSuccess) {
     db.compact(options, function (err, response) {
       if (err) {
         statementError(err);
@@ -73,7 +73,7 @@
   * @name {{deleteDatabase}}
   * @description {{deleteDatabaseDescription}}
   */
-  this.cronapi.pouchdb.deleteDatabase = function (/** @type {ObjectType.OBJECT} @description {{databaseRef}} */	db, /** @type {ObjectType.OBJECT} @description {{options}} */	options, /**@type {ObjectType.STATEMENTSENDER} @description {{error}} */ statementError,  /**@type {ObjectType.STATEMENTSENDER} @description {{success}} */ statementSuccess) {
+  this.cronapi.pouchdb.deleteDatabase = function (/** @type {ObjectType.OBJECT} @description {{databaseRef}} */	db, /** @type {ObjectType.OBJECT} @description {{options}} */	options = {}, /**@type {ObjectType.STATEMENTSENDER} @description {{error}} */ statementError,  /**@type {ObjectType.STATEMENTSENDER} @description {{success}} */ statementSuccess) {
     db.destroy(options, function (err, response) {
       if (err) {
         statementError(err);
@@ -88,7 +88,7 @@
   * @name {{updateDoc}}
   * @description {{updateDocDescription}}
   */
-  this.cronapi.pouchdb.updateDoc = function (/** @type {ObjectType.OBJECT} @description {{databaseRef}} */	db, /** @type {ObjectType.OBJECT} @description {{doc}} */	doc, /** @type {ObjectType.OBJECT} @description {{options}} */	options, /**@type {ObjectType.STATEMENTSENDER} @description {{error}} */ statementError,  /**@type {ObjectType.STATEMENTSENDER} @description {{success}} */ statementSuccess) {
+  this.cronapi.pouchdb.updateDoc = function (/** @type {ObjectType.OBJECT} @description {{databaseRef}} */	db, /** @type {ObjectType.OBJECT} @description {{doc}} */	doc, /** @type {ObjectType.OBJECT} @description {{options}} */	options = {}, /**@type {ObjectType.STATEMENTSENDER} @description {{error}} */ statementError,  /**@type {ObjectType.STATEMENTSENDER} @description {{success}} */ statementSuccess) {
     db.put(doc, options, function (err, response) {
       if (err) {
         statementError(err);
@@ -103,7 +103,7 @@
   * @name {{createDoc}}
   * @description {{createDocDescription}}
   */
-  this.cronapi.pouchdb.createDoc = function (/** @type {ObjectType.OBJECT} @description {{databaseRef}} */	db, /** @type {ObjectType.OBJECT} @description {{doc}} */	doc, /** @type {ObjectType.OBJECT} @description {{options}} */	options, /**@type {ObjectType.STATEMENTSENDER} @description {{error}} */ statementError,  /**@type {ObjectType.STATEMENTSENDER} @description {{success}} */ statementSuccess) {
+  this.cronapi.pouchdb.createDoc = function (/** @type {ObjectType.OBJECT} @description {{databaseRef}} */	db, /** @type {ObjectType.OBJECT} @description {{doc}} */	doc, /** @type {ObjectType.OBJECT} @description {{options}} */	options = {}, /**@type {ObjectType.STATEMENTSENDER} @description {{error}} */ statementError,  /**@type {ObjectType.STATEMENTSENDER} @description {{success}} */ statementSuccess) {
     db.post(doc, options, function (err, response) {
       if (err) {
         statementError(err);
@@ -118,7 +118,7 @@
   * @name {{createDocLote}}
   * @description {{createDocLoteDescription}}
   */
-    this.cronapi.pouchdb.createDocLote = function (/** @type {ObjectType.OBJECT} @description {{databaseRef}} */	db, /** @type {ObjectType.OBJECT} @description {{docs}} */	docs, /** @type {ObjectType.OBJECT} @description {{options}} */	options, /**@type {ObjectType.STATEMENTSENDER} @description {{error}} */ statementError,  /**@type {ObjectType.STATEMENTSENDER} @description {{success}} */ statementSuccess) {
+    this.cronapi.pouchdb.createDocLote = function (/** @type {ObjectType.OBJECT} @description {{databaseRef}} */	db, /** @type {ObjectType.OBJECT} @description {{docs}} */	docs, /** @type {ObjectType.OBJECT} @description {{options}} */	options = {}, /**@type {ObjectType.STATEMENTSENDER} @description {{error}} */ statementError,  /**@type {ObjectType.STATEMENTSENDER} @description {{success}} */ statementSuccess) {
       db.bulkDocs(docs, options , function (err, response) {
         if (err) {
           statementError(err);
@@ -178,7 +178,7 @@
    * @name {{getDoc}}
    * @description {{getDocDescription}}
    */
-  this.cronapi.pouchdb.getDoc = function (/** @type {ObjectType.OBJECT} @description {{databaseRef}} */	db, /** @type {ObjectType.STRING} @description {{docId}} */	docId, /** @type {ObjectType.OBJECT} @description {{options}} */	options, /**@type {ObjectType.STATEMENTSENDER} @description {{error}} */ statementError,  /**@type {ObjectType.STATEMENTSENDER} @description {{success}} */ statementSuccess) {
+  this.cronapi.pouchdb.getDoc = function (/** @type {ObjectType.OBJECT} @description {{databaseRef}} */	db, /** @type {ObjectType.STRING} @description {{docId}} */	docId, /** @type {ObjectType.OBJECT} @description {{options}} */	options = {}, /**@type {ObjectType.STATEMENTSENDER} @description {{error}} */ statementError,  /**@type {ObjectType.STATEMENTSENDER} @description {{success}} */ statementSuccess) {
     db.get(docId, options, function (err, response) {
       if (err) {
         statementError(err);
@@ -193,7 +193,7 @@
    * @name {{getAllDoc}}
    * @description {{getAllDocDescription}}
    */
-  this.cronapi.pouchdb.getAllDoc = function (/** @type {ObjectType.OBJECT} @description {{databaseRef}} */	db, /** @type {ObjectType.OBJECT} @description {{options}} */	options, /**@type {ObjectType.STATEMENTSENDER} @description {{error}} */ statementError,  /**@type {ObjectType.STATEMENTSENDER} @description {{success}} */ statementSuccess) {
+  this.cronapi.pouchdb.getAllDoc = function (/** @type {ObjectType.OBJECT} @description {{databaseRef}} */	db, /** @type {ObjectType.OBJECT} @description {{options}} */	options = {}, /**@type {ObjectType.STATEMENTSENDER} @description {{error}} */ statementError,  /**@type {ObjectType.STATEMENTSENDER} @description {{success}} */ statementSuccess) {
     db.allDocs(options, function (err, response) {
       if (err) {
         statementError(err);
@@ -209,7 +209,7 @@
    * @description {{notifyChangesDescription}}
    * @returns {ObjectType.OBJECT}
    */
-  this.cronapi.pouchdb.notifyChanges = function (/** @type {ObjectType.OBJECT} @description {{databaseRef}} */	db, /** @type {ObjectType.OBJECT} @description {{options}} */	options, /**@type {ObjectType.STATEMENTSENDER} @description {{error}} */ statementError,  /**@type {ObjectType.STATEMENTSENDER} @description {{statementChange}} */ statementChange, /**@type {ObjectType.STATEMENTSENDER} @description {{statementComplete}} */ statementComplete) {
+  this.cronapi.pouchdb.notifyChanges = function (/** @type {ObjectType.OBJECT} @description {{databaseRef}} */	db, /** @type {ObjectType.OBJECT} @description {{options}} */	options = {}, /**@type {ObjectType.STATEMENTSENDER} @description {{error}} */ statementError,  /**@type {ObjectType.STATEMENTSENDER} @description {{statementChange}} */ statementChange, /**@type {ObjectType.STATEMENTSENDER} @description {{statementComplete}} */ statementComplete) {
     let changes = db.changes(options)
       .on('change', function (change) {
         statementChange(change);
@@ -235,7 +235,7 @@
   * @name {{deleteDoc}}
   * @description {{deleteDocDescription}}
   */
-  this.cronapi.pouchdb.deleteDoc = function (/** @type {ObjectType.OBJECT} @description {{databaseRef}} */	db, /** @type {ObjectType.OBJECT} @description {{doc}} */	doc, /** @type {ObjectType.OBJECT} @description {{options}} */	options, /**@type {ObjectType.STATEMENTSENDER} @description {{error}} */ statementError,  /**@type {ObjectType.STATEMENTSENDER} @description {{success}} */ statementSuccess) {
+  this.cronapi.pouchdb.deleteDoc = function (/** @type {ObjectType.OBJECT} @description {{databaseRef}} */	db, /** @type {ObjectType.OBJECT} @description {{doc}} */	doc, /** @type {ObjectType.OBJECT} @description {{options}} */	options = {}, /**@type {ObjectType.STATEMENTSENDER} @description {{error}} */ statementError,  /**@type {ObjectType.STATEMENTSENDER} @description {{success}} */ statementSuccess) {
     db.remove(doc, options, function (err, response) {
       if (err) {
         statementError(err);
@@ -250,7 +250,7 @@
   * @name {{deleteDocById}}
   * @description {{deleteDocByIdDescription}}
   */
-  this.cronapi.pouchdb.deleteByIdDoc = function (/** @type {ObjectType.OBJECT} @description {{databaseRef}} */	db, /** @type {ObjectType.STRING} @description {{docId}} */	docId, /** @type {ObjectType.STRING} @description {{revId}} */	revId, /** @type {ObjectType.OBJECT} @description {{options}} */	options, /**@type {ObjectType.STATEMENTSENDER} @description {{error}} */ statementError,  /**@type {ObjectType.STATEMENTSENDER} @description {{success}} */ statementSuccess) {
+  this.cronapi.pouchdb.deleteByIdDoc = function (/** @type {ObjectType.OBJECT} @description {{databaseRef}} */	db, /** @type {ObjectType.STRING} @description {{docId}} */	docId, /** @type {ObjectType.STRING} @description {{revId}} */	revId, /** @type {ObjectType.OBJECT} @description {{options}} */	options = {}, /**@type {ObjectType.STATEMENTSENDER} @description {{error}} */ statementError,  /**@type {ObjectType.STATEMENTSENDER} @description {{success}} */ statementSuccess) {
     db.remove(docId, revId, options, function (err, response) {
       if (err) {
         statementError(err);
@@ -280,7 +280,7 @@
    * @name {{emit}}
    * @description {{emitDescription}}
    */
-  this.cronapi.pouchdb.emit = function (/** @type {ObjectType.OBJECT} @description {{doc}} */	doc, /** @type {ObjectType.OBJECT} @description {{options}} */	options) {
+  this.cronapi.pouchdb.emit = function (/** @type {ObjectType.OBJECT} @description {{doc}} */	doc, /** @type {ObjectType.OBJECT} @description {{options}} */	options = {}) {
     emit(doc, options)
   };
 
