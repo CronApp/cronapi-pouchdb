@@ -52,5 +52,8 @@
     "queryDescription": "Realiza uma consulta",
     "statementMap": "Operação de consulta",
     "emit": "Emitir retorno da consulta",
-    "emitDescription": "Emite um evento à consulta informando que o documento foi encontrado"
+    "emitDescription": "Emite um evento à consulta informando que o documento foi encontrado",
+    "createDocLote": "Criar documentos",
+    "createDocLoteDescription" : "Cria uma lista de documentos",
+    "docs": "Documentos"
 }

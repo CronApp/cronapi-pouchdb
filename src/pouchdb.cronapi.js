@@ -115,6 +115,21 @@
 
   /**
   * @type function
+  * @name {{createDocLote}}
+  * @description {{createDocLoteDescription}}
+  */
+    this.cronapi.pouchdb.createDocLote = function (/** @type {ObjectType.OBJECT} @description {{databaseRef}} */	db, /** @type {ObjectType.OBJECT} @description {{docs}} */	docs, /** @type {ObjectType.OBJECT} @description {{options}} */	options, /**@type {ObjectType.STATEMENTSENDER} @description {{error}} */ statementError,  /**@type {ObjectType.STATEMENTSENDER} @description {{success}} */ statementSuccess) {
+      db.bulkDocs(docs, options , function (err, response) {
+        if (err) {
+          statementError(err);
+        } else {
+          statementSuccess(response);
+        }
+      });
+    };
+
+  /**
+  * @type function
   * @name {{putAttachment}}
   * @description {{putAttachmentDescription}}
   */
