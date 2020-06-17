@@ -89,6 +89,9 @@
   * @description {{updateDocDescription}}
   */
   this.cronapi.pouchdb.updateDoc = function (/** @type {ObjectType.OBJECT} @description {{databaseRef}} */	db, /** @type {ObjectType.OBJECT} @description {{doc}} */	doc, /** @type {ObjectType.OBJECT} @description {{options}} */	options, /**@type {ObjectType.STATEMENTSENDER} @description {{error}} */ statementError,  /**@type {ObjectType.STATEMENTSENDER} @description {{success}} */ statementSuccess) {
+    
+    if(options == null) options = {};
+
     db.put(doc, options, function (err, response) {
       if (err) {
         statementError(err);
