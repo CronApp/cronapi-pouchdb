@@ -89,6 +89,9 @@
   * @description {{updateDocDescription}}
   */
   this.cronapi.pouchdb.updateDoc = function (/** @type {ObjectType.OBJECT} @description {{databaseRef}} */	db, /** @type {ObjectType.OBJECT} @description {{doc}} */	doc, /** @type {ObjectType.OBJECT} @description {{options}} */	options, /**@type {ObjectType.STATEMENTSENDER} @description {{error}} */ statementError,  /**@type {ObjectType.STATEMENTSENDER} @description {{success}} */ statementSuccess) {
+    
+    if(options == null) options = {};
+
     db.put(doc, options, function (err, response) {
       if (err) {
         statementError(err);
@@ -112,6 +115,21 @@
       }
     });
   };
+
+  /**
+  * @type function
+  * @name {{createDocLote}}
+  * @description {{createDocLoteDescription}}
+  */
+    this.cronapi.pouchdb.createDocLote = function (/** @type {ObjectType.OBJECT} @description {{databaseRef}} */	db, /** @type {ObjectType.OBJECT} @description {{docs}} */	docs, /** @type {ObjectType.OBJECT} @description {{options}} */	options, /**@type {ObjectType.STATEMENTSENDER} @description {{error}} */ statementError,  /**@type {ObjectType.STATEMENTSENDER} @description {{success}} */ statementSuccess) {
+      db.bulkDocs(docs, options , function (err, response) {
+        if (err) {
+          statementError(err);
+        } else {
+          statementSuccess(response);
+        }
+      });
+    };
 
   /**
   * @type function
@@ -235,8 +253,8 @@
   * @name {{deleteDocById}}
   * @description {{deleteDocByIdDescription}}
   */
-  this.cronapi.pouchdb.deleteByIdDoc = function (/** @type {ObjectType.OBJECT} @description {{databaseRef}} */	db, /** @type {ObjectType.STRING} @description {{docRev}} */	docRev, /** @type {ObjectType.STRING} @description {{revId}} */	revId, /** @type {ObjectType.OBJECT} @description {{options}} */	options, /**@type {ObjectType.STATEMENTSENDER} @description {{error}} */ statementError,  /**@type {ObjectType.STATEMENTSENDER} @description {{success}} */ statementSuccess) {
-    db.remove(docId, docRev, options, function (err, response) {
+  this.cronapi.pouchdb.deleteByIdDoc = function (/** @type {ObjectType.OBJECT} @description {{databaseRef}} */	db, /** @type {ObjectType.STRING} @description {{docId}} */	docId, /** @type {ObjectType.STRING} @description {{revId}} */	revId, /** @type {ObjectType.OBJECT} @description {{options}} */	options, /**@type {ObjectType.STATEMENTSENDER} @description {{error}} */ statementError,  /**@type {ObjectType.STATEMENTSENDER} @description {{success}} */ statementSuccess) {
+    db.remove(docId, revId, options, function (err, response) {
       if (err) {
         statementError(err);
       } else {
