@@ -2,7 +2,7 @@
     "includes": [
     {
       "file": "index.html",
-      "script": "plugins/cronapi-pouchdb/dist/pouchdb.cronapi.min.js",
+      "script": "node_modules/cronapi-pouchdb/dist/pouchdb.cronapi.min.js",
       "type": "script"
     }
 	]
